@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import { SearchCard, SearchImgWrapper } from '../common/SearchCard';
 import { StarIcon } from '../common/Starlcon';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 
 
@@ -39,7 +40,7 @@ const ShowCard = ({name,image,summary,id,onstarredMeClick,isStarred})=>{
         <p>{stripe_summary}</p>
   
         <ActionSection className="btns">
-         <a href={`/show/${id}`} target='_blank' rel='noreferrer'>Read More</a>
+         <Link to={`/show/${id}`} target='_blank' rel='noreferrer'>Read More</Link>
           <StarBtn ref={starBtnRef}
             type="button" onClick={handleStarClick} className={isStarred && 'animate'} >
             {/* {isStarred? 'Unstar': 'Star'} */}
